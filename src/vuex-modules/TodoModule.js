@@ -4,7 +4,7 @@ const TodoModule = {
         'title': null,
         'items': [],
         'isModalOpen': false,
-        'selectedId': {}
+        'selectedId': null
       },
       mutations: {
         updateTitle(state, value){
@@ -32,7 +32,7 @@ const TodoModule = {
         },
         deleteItem({state, commit}){
           commit('openModal', false) 
-          commit('updateItems', state.items.filter(item=> item.id == state.id))
+          commit('updateItems', state.items.filter(item=> item.id != state.selectedId))
           commit('setSelectedId', null) 
         },
         completeItem({state, commit}, id){
