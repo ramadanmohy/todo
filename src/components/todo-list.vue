@@ -1,8 +1,8 @@
 <template lang="html">
   <TodosDataProvider>
-    <div slot-scope="{ todos: todos }">
+    <div slot-scope="{ items }">
       <TodoItem 
-        v-for="todo in todos"
+        v-for="todo in items"
         :key=todo.id
         :title="todo.title" 
         class="mb-3" />

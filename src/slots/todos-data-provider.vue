@@ -2,11 +2,11 @@
 import { mapState } from 'vuex'
 export default {
     computed: mapState({
-      todos: state => state.TodoModule.todos
+      items: state => state.TodoModule.items
     }),
   render() {
     return this.$scopedSlots.default({
-      todos: this.todos,
+      items: this.items,
     });
   },
 };
