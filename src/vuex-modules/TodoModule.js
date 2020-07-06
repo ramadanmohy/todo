@@ -34,6 +34,18 @@ const TodoModule = {
           commit('openModal', false) 
           commit('updateItems', state.items.filter(item=> item.id == state.id))
           commit('setSelectedId', null) 
+        },
+        completeItem({state, commit}, id){
+          let selected = state.items.find((item) => item.id == id);
+          let items = state.items.map((item) => {
+            if (item.id == id) {
+              return Object.assign({}, selected, {
+                done: true,
+              });
+            }
+            return item;
+          });
+          commit('updateItems', items)
         }
       }
 }

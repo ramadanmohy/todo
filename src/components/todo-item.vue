@@ -5,7 +5,9 @@
         <h3 class="headline mb-0">{{ title }}</h3>
       </div>
     </v-card-title>
-    <v-btn @click="onComplete">
+    <v-btn 
+      v-if="!done"
+      @click="onComplete">
       Complete
     </v-btn>
     <v-btn 
@@ -23,6 +25,10 @@ export default {
       type: Number,
       default: 0,
     },
+    done: {
+      type: Boolean,
+      default: false
+    },
     title: {
       type: String,
       required: true,
@@ -34,7 +40,7 @@ export default {
       this.$store.commit('TodoModule/setSelectedId', this.id)
     },
     onComplete(){
-
+      this.$store.dispatch('TodoModule/completeItem', this.id)
     }
   }
 }

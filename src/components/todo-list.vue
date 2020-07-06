@@ -5,6 +5,8 @@
         v-for="todo in items"
         :key=todo.id
         :title="todo.title" 
+        :id="todo.id"
+        :done="todo.done"
         class="mb-3" />
     </div>
   </TodosDataProvider>
