@@ -12,6 +12,7 @@
 export default {
   methods: {
     submit(e){
+      if(this.isEdit) return;
       if(e.keyCode == 13 && this.title)
         this.$store.dispatch('TodoModule/addItem')
     }

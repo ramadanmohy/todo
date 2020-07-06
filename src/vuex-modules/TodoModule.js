@@ -46,6 +46,18 @@ const TodoModule = {
             return item;
           });
           commit('updateItems', items)
+        },
+        updateItem({state, commit}, payload){
+          let selected = state.items.find((item) => item.id == payload.id);
+          let items = state.items.map((item) => {
+            if (item.id == payload.id) {
+              return Object.assign({}, selected, {
+                title: payload.title,
+              });
+            }
+            return item;
+          });
+          commit('updateItems', items)
         }
       }
 }
