@@ -12,6 +12,7 @@
         justify-center
       >
         <v-flex xs6>
+          <ConfirmModal v-if="isModalOpen"/>
           <TodoForm />
           <TodoList/>
         </v-flex>
@@ -23,12 +24,21 @@
 <script>
 import TodoForm from '@/components/todo-form'
 import TodoList from '@/components/todo-list'
+import ConfirmModal from '@/components/confirm-modal'
 
 export default {
   name: 'App',
+  computed: {
+    isModalOpen: {
+      get(){
+        return this.$store.state.TodoModule.isModalOpen
+      }
+    }
+  },
   components: {
     TodoForm,
     TodoList,
+    ConfirmModal
   },
   data () {
     return {

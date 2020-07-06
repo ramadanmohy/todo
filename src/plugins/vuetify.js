@@ -6,12 +6,13 @@ import {
   VFooter,
   VList,
   VBtn,
+  VDialog,
   VIcon,
   VGrid,
   VToolbar,
   VCard,
   VTextField,
-  transitions
+  transitions,
 } from 'vuetify'
 import 'vuetify/src/stylus/app.styl'
 
@@ -27,6 +28,7 @@ Vue.use(Vuetify, {
     VToolbar,
     VCard,
     VTextField,
-    transitions
+    transitions,
+    VDialog,
   },
 })
