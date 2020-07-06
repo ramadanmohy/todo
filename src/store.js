@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import TodoModule from '../src/vuex-modules/todo'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  modules: {
+    TodoModule
+  },
   state: {
-    'todos': [
-      {id: 1, title: "first item", done: false},
-      {id: 2, title: "second item", done: false},
-      {id: 3, title: "third item", done: false}
-    ]
+    
   },
   mutations: {
 
